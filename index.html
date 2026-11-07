@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LiveVibe - Feel the Music. Live the Moment. Explore upcoming live music concerts, discover world-class artists, and register your interest for unforgettable performances.">
+  <title>LiveVibe — Feel the Music. Live the Moment.</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Navigation Bar
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="LiveVibe Home">
+        <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+        <span>LIVE<span class="text-gradient">VIBE</span></span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav class="nav-menu" id="primary-navigation" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="events.html" class="nav-link">Explore Events</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="register.html" class="btn btn-primary btn-sm mobile-only-btn">
+          <i class="fa-solid fa-ticket"></i> Register Now
+        </a>
+      </nav>
+
+      <!-- Nav Actions (Theme Toggle & CTA) -->
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="register.html" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-ticket"></i> Register Now
+        </a>
+        <button type="button" class="hamburger-btn" aria-label="Open mobile navigation" aria-expanded="false" aria-controls="primary-navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Hero Section
+       ========================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg" role="presentation"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-label">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>THE NEXT LIVE EXPERIENCE STARTS HERE</span>
+        </div>
+        <h1 class="hero-title">
+          WHERE MUSIC <span class="text-gradient">MEETS MAGIC</span>
+        </h1>
+        <p class="hero-desc">
+          Discover unforgettable live music experiences. Explore your favourite artists, find upcoming concerts, and be part of something extraordinary.
+        </p>
+        <div class="hero-buttons">
+          <a href="events.html" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-magnifying-glass"></i> Explore Concerts
+          </a>
+          <a href="#featured-concerts" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-guitar"></i> Discover Artists
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Next Event Live Countdown Timer Banner (Bonus Feature)
+       ========================================================================= -->
+  <section class="countdown-banner" id="countdown-timer-widget" aria-label="Upcoming Concert Countdown">
+    <div class="container">
+      <div class="countdown-inner">
+        <div class="countdown-info">
+          <div class="countdown-pulse-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="countdown-title-wrap">
+            <span class="badge badge-warm">Next Upcoming Tour</span>
+            <h4 id="countdown-artist-name">Arijit Singh</h4>
+            <p id="countdown-event-title">The Soulful Nights Tour &bull; <span id="countdown-venue-name">YMCA Grounds, Chennai</span></p>
+          </div>
+        </div>
+
+        <div class="countdown-clock">
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <span class="countdown-sep">:</span>
+          <div class="countdown-item">
+            <span class="countdown-value" id="countdown-seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <a href="event-details.html?id=1" id="countdown-cta-btn" class="btn btn-outline btn-sm">
+          <span>View Tour Details</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Featured Concerts Section (At least 6 cards)
+       ========================================================================= -->
+  <section class="section-padding" id="featured-concerts">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge section-tag">Live Experiences</span>
+        <h2 class="section-title">UPCOMING <span class="text-gradient">LIVE EXPERIENCES</span></h2>
+        <p class="section-subtitle">Find your next unforgettable music experience from premier artists across India.</p>
+      </div>
+
+      <!-- Rendered dynamically by main.js using centralized dataset -->
+      <div class="events-grid" id="featured-events-grid">
+        <!-- Event Cards will be injected by JavaScript -->
+      </div>
+
+      <div class="text-center" style="margin-top: 48px; text-align: center;">
+        <a href="events.html" class="btn btn-secondary btn-lg">
+          <span>View All 8 Premier Concerts</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Music Genres Section
+       ========================================================================= -->
+  <section class="section-padding" id="genres" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge section-tag">Curated Vibes</span>
+        <h2 class="section-title">DISCOVER BY <span class="text-gradient">GENRE</span></h2>
+        <p class="section-subtitle">From stadium rock and soulful classical fusion to pulsing electronic beats, find your sound.</p>
+      </div>
+
+      <div class="genres-grid">
+        <div class="genre-card reveal" data-genre="Pop" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-microphone-lines"></i></div>
+          <h3 class="genre-name">Pop</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <div class="genre-card reveal" data-genre="Rock" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-guitar"></i></div>
+          <h3 class="genre-name">Rock</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <div class="genre-card reveal" data-genre="Electronic" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-sliders"></i></div>
+          <h3 class="genre-name">Electronic</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <div class="genre-card reveal" data-genre="Bollywood" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-drum"></i></div>
+          <h3 class="genre-name">Bollywood</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <div class="genre-card reveal" data-genre="Hip-Hop" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-compact-disc"></i></div>
+          <h3 class="genre-name">Hip-Hop</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <div class="genre-card reveal" data-genre="Indie" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-headphones"></i></div>
+          <h3 class="genre-name">Indie</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+
+        <div class="genre-card reveal" data-genre="Classical Fusion" role="button" tabindex="0">
+          <div class="genre-icon-wrap"><i class="fa-solid fa-music"></i></div>
+          <h3 class="genre-name">Classical Fusion</h3>
+          <span class="genre-explore-label">Explore Shows <i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Why Choose LiveVibe Section
+       ========================================================================= -->
+  <section class="section-padding" id="why-choose-us">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge section-tag">The LiveVibe Standard</span>
+        <h2 class="section-title">WHY CHOOSE <span class="text-gradient">LIVEVIBE</span></h2>
+        <p class="section-subtitle">Crafted exclusively for genuine live music enthusiasts seeking seamless discovery.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3 class="feature-title">Discover Amazing Artists</h3>
+          <p class="feature-desc">
+            Explore world-renowned chart-toppers, stadium rock bands, and visionary musical pioneers all in one place.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <h3 class="feature-title">Explore Multiple Music Genres</h3>
+          <p class="feature-desc">
+            Browse diverse soundscapes including Bollywood, Rock, Electronic synthwave, Punjabi Hip-Hop, and classical fusion.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-ticket-simple"></i>
+          </div>
+          <h3 class="feature-title">Easy Concert Registration</h3>
+          <p class="feature-desc">
+            Streamlined interest registration with real-time field validation and immediate confirmation verification.
+          </p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3 class="feature-title">Responsive & User-Friendly</h3>
+          <p class="feature-desc">
+            Optimized for flawless browsing across mobile devices, tablets, and high-resolution desktop monitors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       About Section
+       ========================================================================= -->
+  <section class="section-padding" id="about" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="about-box reveal">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="badge section-tag">About Our Platform</span>
+            <h2>ABOUT <span class="text-gradient">LIVEVIBE</span></h2>
+            <p>
+              LiveVibe is a music-focused event discovery platform designed to connect music lovers with unforgettable live performances. Discover concerts from different artists, explore diverse genres, and find your next live music experience.
+            </p>
+            <p>
+              Whether you are craving the acoustic intimacy of soulful melodies or the earth-shattering bass of a stadium rock concert, LiveVibe curates the finest live sonic spectacles across major cultural metropolises.
+            </p>
+            <div style="margin-top: 24px;">
+              <a href="events.html" class="btn btn-primary">
+                <span>Start Exploring</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">8+</div>
+              <div class="stat-label">Premier Shows</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">7</div>
+              <div class="stat-label">Diverse Genres</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5</div>
+              <div class="stat-label">Major Cities</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Live Atmosphere</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Call to Action Section
+       ========================================================================= -->
+  <section class="section-padding cta-section">
+    <div class="container">
+      <div class="cta-card reveal">
+        <span class="badge badge-warm section-tag">Join The Crowd</span>
+        <h2 class="cta-title">YOUR NEXT FAVOURITE LIVE EXPERIENCE AWAITS</h2>
+        <p class="cta-desc">
+          Don't miss the music. Explore upcoming concerts and discover the artists you love.
+        </p>
+        <a href="events.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-music"></i> Explore All Concerts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Contact Section
+       ========================================================================= -->
+  <section class="section-padding" id="contact" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge section-tag">Get In Touch</span>
+        <h2 class="section-title">CONNECT WITH <span class="text-gradient">LIVEVIBE</span></h2>
+        <p class="section-subtitle">Have questions regarding festival line-ups or interest registration? Reach out to our team.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div class="contact-details">
+              <h5>Email Inquiries</h5>
+              <p><a href="mailto:contact@livevibe.live">contact@livevibe.live</a></p>
+              <p><a href="mailto:support@livevibe.live">support@livevibe.live</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-details">
+              <h5>Concert Help Desk</h5>
+              <p>+91 (080) 4123 4567 (Mon - Sat, 10 AM - 7 PM IST)</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="contact-details">
+              <h5>Central Operations</h5>
+              <p>LiveVibe Entertainment Hub, Bandra Kurla Complex, Mumbai, India</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <h3 style="font-size: 1.3rem; margin-bottom: 16px;">Quick Concert Finder</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">
+            Ready to find your tour? Jump straight to our live event catalog or register your interest in seconds without waiting.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="events.html" class="btn btn-secondary">
+              <i class="fa-solid fa-list-check"></i> Browse Complete Event Schedule
+            </a>
+            <a href="register.html" class="btn btn-primary">
+              <i class="fa-solid fa-user-plus"></i> Open Concert Registration Form
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Footer
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="LiveVibe Home">
+            <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+            <span>LIVE<span class="text-gradient">VIBE</span></span>
+          </a>
+          <p>
+            Feel the Music. Live the Moment. LiveVibe connects fans with premier live concerts and acoustic festivals across India.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Explore Events</a></li>
+            <li><a href="#about">About Platform</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+            <li><a href="register.html">Registration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Music Genres</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?genre=Bollywood">Bollywood</a></li>
+            <li><a href="events.html?genre=Rock">Rock</a></li>
+            <li><a href="events.html?genre=Pop">Pop</a></li>
+            <li><a href="events.html?genre=Hip-Hop">Hip-Hop</a></li>
+            <li><a href="events.html?genre=Classical+Fusion">Classical Fusion</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>LiveVibe Guarantee</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6;">
+            LiveVibe provides verified access to premier live music tours and festival registrations across India. Enjoy priority entry passes, seamless event discovery, and authentic live sound experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2027 LIVEVIBE. All rights reserved. Live Music Concert Platform.</div>
+        <div>Designed with <span style="color: var(--accent-secondary);">&hearts;</span> for Live Music Fans</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/events.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
